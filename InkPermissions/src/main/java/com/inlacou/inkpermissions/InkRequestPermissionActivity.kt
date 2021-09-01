@@ -109,11 +109,14 @@ class InkRequestPermissionActivity : Activity() {
 	}
 
 	private fun getPermissionBlockedType(permission: String): InkPermissionStatus {
+		val asked = InkPermissionConfig.loader?.invoke(this, "${permission}_asked", false) ?: throw Exception("No loader function provided to InkPermissionConfig")
 		return if (!ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
-			if(InkPermissionConfig.loader?.invoke(this, "${permission}_asked", false) ?: throw Exception("No loader function provided to InkPermissionConfig")) InkPermissionStatus.BLOCKED
+			if(asked) InkPermissionStatus.BLOCKED
 			else InkPermissionStatus.DENIED
 			
-		} else InkPermissionStatus.DENIED
+		} else
+			if(asked) InkPermissionStatus.DENIED_BUT_ASKED
+			else InkPermissionStatus.DENIED
 	}
 
 	private fun returnAllGranted() {

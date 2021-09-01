@@ -203,14 +203,14 @@ object InkPermissionUtils {
 		val asked = InkPermissionConfig.loader?.invoke(activity, "${permission}_asked", false) ?: throw Exception("No loader function provided to InkPermissionConfig")
 		return if (ContextCompat.checkSelfPermission(activity, permission)!=PackageManager.PERMISSION_GRANTED) {
 			if (!ActivityCompat.shouldShowRequestPermissionRationale(activity, permission)) {
-				if(asked){
+				if(asked) {
 					InkPermissionStatus.BLOCKED
-				}else{
+				} else {
 					InkPermissionStatus.DENIED
 				}
-			} else if(asked){
+			} else if(asked) {
 				InkPermissionStatus.DENIED_BUT_ASKED
-			}else{
+			} else {
 				InkPermissionStatus.DENIED
 			}
 		} else InkPermissionStatus.GRANTED
