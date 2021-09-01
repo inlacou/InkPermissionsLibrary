@@ -1,0 +1,10 @@
+<resources>
+    <string name="Forced_permissions_title_singular">Permiso necesario</string>
+    <string name="Forced_permissions_title_plural">Permisos necesarios</string>
+    <string name="Forced_permissions_content_pre_singular">El permiso </string>
+    <string name="Forced_permissions_content_post_singular">es necesario. Activalo manualmente en los ajustes de la aplicación.</string>
+    <string name="Forced_permissions_content_pre_plural">Los permisos </string>
+    <string name="Forced_permissions_content_post_plural">son necesarios. Activelos manualmente en los ajustes de la aplicación.</string>
+    <string name="Forced_permissions_positive_button">Llévame ahí</string>
+    <string name="Forced_permissions_negative_button">Cancelar</string>
+</resources>
