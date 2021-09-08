@@ -53,11 +53,8 @@ class InkRequestPermissionActivity : Activity() {
 		val permissionsNotGranted = ArrayList<String>()
 		mGrantedPermissions = ArrayList()
 		mPermissions.forEach {
-			if (ActivityCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_DENIED) {
-				permissionsNotGranted.add(it)
-			} else {
-				mGrantedPermissions.add(it)
-			}
+			if (ActivityCompat.checkSelfPermission(this, it)==PackageManager.PERMISSION_DENIED) permissionsNotGranted.add(it)
+			else mGrantedPermissions.add(it)
 		}
 
 		if (permissionsNotGranted.isEmpty()) {
