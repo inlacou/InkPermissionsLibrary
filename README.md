@@ -48,13 +48,13 @@ Request permissions:
 ```Kt
 InkPermissionUtils.request(
   activity = requireActivity(),
-  permissions = permissions = listOf(
+  permissions = listOf(
       Manifest.permission.ACCESS_FINE_LOCATION,
       Manifest.permission.READ_EXTERNAL_STORAGE,
       Manifest.permission.CALL_PHONE,
       Manifest.permission.CAMERA,
     ).toTypedArray(),
-  criticalPermissions = criticalPermissions = listOf(
+  criticalPermissions = listOf(
       Manifest.permission.ACCESS_FINE_LOCATION,
       Manifest.permission.READ_EXTERNAL_STORAGE,
     ).toTypedArray(),
